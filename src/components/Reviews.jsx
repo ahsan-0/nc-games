@@ -23,6 +23,8 @@ function Reviews() {
           Owner: <Link to={`/reviews/${review.review_id}`}>{review.owner}</Link>
         </li>
         <p>Review title: {review.title}</p>
+        <p>Category: {review.category}</p>
+        <p>Votes: {review.votes}</p>
         <p>Created at: {moment(review.created_at).format("DD-MM-YYYY")}</p>
       </div>
     );
