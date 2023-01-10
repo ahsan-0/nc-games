@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Reviews from "./components/Reviews";
+import SingleReview from "./components/SingleReview";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/api/reviews" element={<Reviews />}></Route>
+          <Route path="/api/reviews/:review_id" element={<SingleReview />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
