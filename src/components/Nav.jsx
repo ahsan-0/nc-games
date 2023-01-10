@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <nav>
-      <Link to="/api/categories">Game-Categories</Link>
-      <Link to="/api/reviews">Reviews</Link>
-      <Link to="/api/users">Users</Link>
+      <Link to="/categories">Game-Categories</Link>
+      <Link to="/reviews">Reviews</Link>
+      <Link to="/users">Users</Link>
     </nav>
   );
 }
