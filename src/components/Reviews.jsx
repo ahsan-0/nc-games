@@ -1,19 +1,29 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../api";
+import { Link } from "react-router-dom";
+import moment from "moment";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    setIsLoading(true);
     getReviews().then(({ data }) => {
       setReviews(data.reviews);
+      setIsLoading(false);
     });
   }, []);
+  if (isLoading) {
+    return <p>is Loading...</p>;
+  }
   return reviews.map((review) => {
     return (
       <div key={review.review_id}>
-        <li>Review title: {review.title}</li>
-        <p>Owner: {review.owner}</p>
-        <p>Created at: {review.created_at}</p>
+        <li>
+          Owner: <Link to={`/reviews/${review.review_id}`}>{review.owner}</Link>
+        </li>
+        <p>Review title: {review.title}</p>
+        <p>Created at: {moment(review.created_at).format("DD-MM-YYYY")}</p>
       </div>
     );
   });
