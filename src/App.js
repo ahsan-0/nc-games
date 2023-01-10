@@ -12,8 +12,8 @@ function App() {
         <Header />
         <Nav />
         <Routes>
-          <Route path="/api/reviews" element={<Reviews />}></Route>
-          <Route path="/api/reviews/:review_id" element={<SingleReview />}></Route>
+          <Route path="/reviews" element={<Reviews />}></Route>
+          <Route path="/reviews/:review_id" element={<SingleReview />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
