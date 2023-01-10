@@ -1,5 +1,5 @@
-function getReviews() {
-  return fetch("https://nc-games-f38h.onrender.com/api/reviews").then((response) => response.json());
-}
+import axios from "axios";
 
-module.exports = {getReviews}
+export const getReviews = () => {
+  return axios.get("https://nc-games-f38h.onrender.com/api/reviews");
+};
