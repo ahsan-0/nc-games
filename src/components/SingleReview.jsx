@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getComments, getSingleReview } from "../api";
 import moment from "moment";
-
+import Votes from "./Votes"
 function SingleReview() {
   const { review_id } = useParams();
   const [singleReview, setSingleReview] = useState([]);
@@ -33,10 +33,10 @@ function SingleReview() {
       {comments.length === 0 ? <p>No comments available</p> : <h3>Comments:</h3>}
       {comments.map((comment) => {
         return (
-          <div key={comment.comment_id}>
+          <div className="comments" key={comment.comment_id}>
             <li>Author: {comment.author}</li>
             <p>Comment: {comment.body}</p>
-            <p>Votes: {comment.votes}</p>
+            <Votes voteData={ comment.votes} />
             <p>Created at: {moment(comment.created_at).format("DD-MM-YYYY")}</p>
           </div>
         );
