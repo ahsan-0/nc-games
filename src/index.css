@@ -4,20 +4,41 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(223, 222, 222);
+  background: hsl(51, 40%, 84%);
 }
 
 .reviews {
-  border: 4px solid rgb(85, 238, 102);
-  background: rgb(64, 216, 221);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 4px solid #344445;
+  background: #e0e34d;
+  box-shadow: 5px 40px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 90%;
   display: inline-block;
   margin: 5px;
 }
 
 .nav {
-  margin: 5px;
+  margin: 10px;
+}
+
+.comments {
+  border: 3px solid rgb(99, 195, 149);
+  margin:5px;
+}
+
+h1 {
+  text-decoration-line: underline;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+button {
+  background-color: rgb(62, 137, 159); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 code {
