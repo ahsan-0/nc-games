@@ -18,7 +18,7 @@ function Reviews() {
   }
   return reviews.map((review) => {
     return (
-      <div key={review.review_id}>
+      <div className="reviews" key={review.review_id}>
         <li>
           Owner: <Link to={`/reviews/${review.review_id}`}>{review.owner}</Link>
         </li>
