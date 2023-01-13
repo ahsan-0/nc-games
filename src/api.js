@@ -6,8 +6,12 @@ export const getReviews = () => {
 
 export const getSingleReview = (id) => {
   return axios.get(`https://nc-games-f38h.onrender.com/api/reviews/${id}`);
-}
+};
 
 export const getComments = (id) => {
   return axios.get(`https://nc-games-f38h.onrender.com/api/reviews/${id}/comments`);
-}
+};
+
+export const patchCommentVotes = (id, patchData) => {
+  return axios.patch(`https://nc-games-f38h.onrender.com/api/reviews/${id}`, patchData);
+};
