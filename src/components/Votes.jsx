@@ -18,8 +18,8 @@ function Votes({ singleReviewVotes, commentVoteData, setVotes, id }) {
         id={commentVotes ? commentVotes : singleReviewVotes}
         onClick={(event) => {
           setUpVote((curr) => curr + 1);
-          setVotes(singleReviewVotes + 1);
           if (parseInt(event.target.id) === singleReviewVotes) {
+            setVotes(singleReviewVotes + 1);
             patchCommentVotes(id, patchData)
               .then(() => {})
               .catch((err) => {
