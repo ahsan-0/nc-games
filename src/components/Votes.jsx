@@ -5,7 +5,7 @@ function Votes({ singleReviewVotes, commentVoteData, id, setVotes }) {
   const [commentVotes, setCommentVotes] = useState(commentVoteData);
   const [upVote, setUpVote] = useState(1);
   const patchData = {
-    inc_votes: upVote,
+    inc_votes: 1,
   };
   return (
     <div>
@@ -13,12 +13,10 @@ function Votes({ singleReviewVotes, commentVoteData, id, setVotes }) {
       <button
         id={commentVotes ? commentVotes : singleReviewVotes}
         onClick={(event) => {
-          setUpVote((curr) => (curr += 1));
+          setUpVote((curr) => curr + 1);
           if (parseInt(event.target.id) === singleReviewVotes) {
             patchCommentVotes(id, patchData).then(({ data }) => {
-              setVotes(singleReviewVotes + upVote);
-              console.log(upVote);
-              console.log(data);
+              setVotes(singleReviewVotes + 1);
             });
           }
           setCommentVotes(commentVoteData + upVote);
